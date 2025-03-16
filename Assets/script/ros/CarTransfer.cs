@@ -34,6 +34,7 @@ public class CarTransfer : MonoBehaviour
         var genericMessage = JsonUtility.FromJson<GenericRosMessage>(jsonString);
         if(genericMessage.topic == carFrontInputTopic)
         {
+            Debug.Log("Front");
             HandleFloat32MultiArrayMessage(jsonString, "Front");
         }
         else if(genericMessage.topic == carRearInputTopic)
